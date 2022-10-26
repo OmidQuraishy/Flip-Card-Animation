@@ -1,0 +1,52 @@
+body{
+    height: 100vh;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    background-color: #1e1329;
+}
+.card{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    transform-style: preserve-3d;
+    perspective:500px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.front,.back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #fff;
+    backface-visibility: hidden;
+    transition: transform 2s;
+    border-radius: 5px;
+}
+.front{
+    background-image: url(abstract-2560x1440-huawei-matebook-e-2019-hd-21829.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.back{
+    transform: rotateY(-180deg);
+    background-image: url(abstract-2560x1440-huawei-matebook-e-2019-hd-21830.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+h1{
+    font-size: 30px;
+    line-height: 260px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.card:hover > .front{
+    transform: rotateY(180deg);
+}
+.card:hover > .back{
+    transform: rotateY(0deg);
+}
